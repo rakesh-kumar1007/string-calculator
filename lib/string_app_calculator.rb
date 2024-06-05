@@ -11,6 +11,9 @@ class StringAppCalculator
 
     return numbers.split(/[\n,]/).map(&:to_i).sum if numbers.include?("\n") && !numbers.include?("//") #"1\n2,3"
 
+    negatives = numbers.split(',').select { |n| n.to_i < 0 }
+    raise "Negative numbers not allowed: #{negatives.join(', ')}" if negatives.any?
+
     return numbers.split(',').map(&:to_i).sum # rest
   end
 end
