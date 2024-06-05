@@ -12,4 +12,8 @@ RSpec.describe StringAppCalculator do
   it 'returns a number for a single number' do
     expect(calculator.add("1")).to eq(1)
   end
+
+  it 'returns sum of multiple numbers' do
+    expect(calculator.add("1,3")).to eq(4)
+  end
 end
